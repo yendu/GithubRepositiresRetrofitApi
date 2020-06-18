@@ -13,12 +13,12 @@ import com.yendu.githubrepositiresretrofitapi.repositories.GithubRepoWebReposito
 
 import java.util.List;
 
-public class ViewModels extends AndroidViewModel {
+public class GithubRepoViewModel extends AndroidViewModel {
 
     MutableLiveData<List<GithubRepo>> listRepos;
     private GithubRepoRoomRepository githubRepoRoomRepository;
     private GithubRepoWebRepository githubRepoWebRepository;
-    public ViewModels(@NonNull Application application) {
+    public GithubRepoViewModel(@NonNull Application application) {
         super(application);
         githubRepoRoomRepository=new GithubRepoRoomRepository(application);
         githubRepoWebRepository=new GithubRepoWebRepository();
