@@ -1,4 +1,6 @@
 package com.yendu.githubrepositiresretrofitapi.repositories;
 
-public class GithubRepoRepository {
+public class GithubRpoRoomRepository {
+
+    
 }
