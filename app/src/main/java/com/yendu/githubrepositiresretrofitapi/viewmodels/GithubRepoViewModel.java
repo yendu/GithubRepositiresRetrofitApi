@@ -4,10 +4,13 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
 import com.yendu.githubrepositiresretrofitapi.models.GithubRepo;
+//import com.yendu.githubrepositiresretrofitapi.repositories.GithubRepoRoomRepository;
 import com.yendu.githubrepositiresretrofitapi.repositories.GithubRepoRoomRepository;
 import com.yendu.githubrepositiresretrofitapi.repositories.GithubRepoWebRepository;
 
@@ -24,7 +27,14 @@ public class GithubRepoViewModel extends AndroidViewModel {
         githubRepoWebRepository=new GithubRepoWebRepository();
 
         listRepos=githubRepoWebRepository.getRepos("yendu");
-        githubRepoRoomRepository.insert(listRepos.getValue());
+
+//        listRepos.observe(this, new Observer<List<GithubRepo>>() {
+//            @Override
+//            public void onChanged(List<GithubRepo> repos) {
+//
+//            }
+//        });
+       // githubRepoRoomRepository.insert(listRepos.getValue());
     }
 
     public LiveData<List<GithubRepo>> listRepo(){
